@@ -15,7 +15,7 @@ export const addDep = async(req, res)=>{
 	}
 }
 
-Deleting a Department
+//Deleting a Department
 export const deleteDep = async (req, res) => {
 	if (req.headers && req.headers.auth !== "admin") {
 		return res.status(401).send("Unauthorized access!");
