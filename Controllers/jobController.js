@@ -1,5 +1,6 @@
 import Job_Title from "../Models/job.js";
 
+//Add a job title
 export const addJob = async(req, res)=>{
 	try{
 		const job = await new Job_Title({
