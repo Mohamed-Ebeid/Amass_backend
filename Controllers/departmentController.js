@@ -15,24 +15,24 @@ export const addDep = async(req, res)=>{
 	}
 }
 
-// Deleting a Department
-// export const deleteDep = async (req, res) => {
-// 	if (req.headers && req.headers.auth !== "admin") {
-// 		return res.status(401).send("Unauthorized access!");
-// 	}
-// 	try {
-// 		const dep = await Department.findById(req.params.departmentId);
-// 		if (course) {
-// 			await Department.findByIdAndRemove(req.params.courseId);
-// 			res.json("Deleted successfully! ");
-// 		} else {
-// 			res.json("Does not exists! ");
-// 		}
-// 	} catch (e) {
-// 		return res.status(400).send(e.message);
-// 	}
-// };
-// 
+Deleting a Department
+export const deleteDep = async (req, res) => {
+	if (req.headers && req.headers.auth !== "admin") {
+		return res.status(401).send("Unauthorized access!");
+	}
+	try {
+		const dep = await Department.findById(req.params.departmentId);
+		if (course) {
+			await Department.findByIdAndRemove(req.params.courseId);
+			res.json("Deleted successfully! ");
+		} else {
+			res.json("Does not exists! ");
+		}
+	} catch (e) {
+		return res.status(400).send(e.message);
+	}
+};
+
 //Getting all the department
 export const allDep = async (req, res) => {
 	try {
