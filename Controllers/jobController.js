@@ -16,9 +16,6 @@ export const addJob = async(req, res)=>{
 
 //Updating a job title
 export const updateJob = async (req, res) => {
-	// if (req.headers && req.headers.auth !== "admin") {
-	// 	return res.status(401).send("Unauthorized access!");
-	// }
 	try {
 		const job = await Job_Title.findById(req.params.jobId);
 		if (job) {

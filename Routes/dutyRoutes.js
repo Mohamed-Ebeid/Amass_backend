@@ -9,7 +9,7 @@ const dutyRouter = express.Router();
 
 //api courses
 dutyRouter.post("/start", isAuth, startDuty); //Start the timer
-dutyRouter.put("/end/:dutyId", isAuth, endDuty);   //Stop the timer
+dutyRouter.put("/end", isAuth, endDuty);   //Stop the timer
 
 
 

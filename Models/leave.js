@@ -6,10 +6,10 @@ mongoose.Promise = global.Promise;
 var leaveSchema = new Schema(
   {
     //creating collections
-    emp_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Employee' },
+    emp_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Employee', required:true},
     job_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Job_Title' },
-    date: {type:Date},
-    status: {type:Boolean, default:false },
+    date: {type:Date, required: true},
+    status: {type:String, default:"pending" },
    
   },
   {
