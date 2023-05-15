@@ -15,6 +15,7 @@ var employeeSchema = new Schema(
     emp_pass: {type: String, required: true},
     isAdmin: {type: Boolean, default:false, required: true},
     job_id:{ type: mongoose.Schema.Types.ObjectId, ref: 'Job_Title' },
+    dep_id:{ type: mongoose.Schema.Types.ObjectId, ref: 'Department' },
 
     
   },

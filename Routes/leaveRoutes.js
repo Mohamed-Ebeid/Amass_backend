@@ -10,7 +10,7 @@ const jobRouter = express.Router();
 
 //api courses
 jobRouter.post("/", isAuth, apply); //Apply for a leave
-jobRouter.put("/", isAuth, isAdmin, accept); //Accept a leave
+jobRouter.put("/accept", isAuth, isAdmin, accept); //Accept a leave
 jobRouter.put("/deny", isAuth, isAdmin, deny); //Accept a leave
 
 
