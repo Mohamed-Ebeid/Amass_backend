@@ -11,6 +11,7 @@ import reportRoutes from "./Routes/reportRoutes.js";
 
 const app = express();
 dotenv.config();
+app.use(cors());
 
 //db connection
 mongoose
@@ -21,14 +22,10 @@ mongoose
 // middlewares
 app.use(express.json({ limit: "4mb" }));
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 // route middlewares
 app.get("/api", function (req, res) {
-  // const date = new Date();
-  // res.send(console.log(date));
   res.json("Hello from the backend");
-  //console.log(req)
 });
 
 app.use("/api/employee", employeeRoutes);
