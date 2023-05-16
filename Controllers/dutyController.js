@@ -16,7 +16,7 @@ export const startDuty = async (req,res)=>{
 	}
 }
 
-export const endDuty = async (req,res)=>{
+export const endDuty = async (req,res)=> {
 	try{
 		const duty = await Duty.findById(req.body.dutyId);
 		if (duty) {

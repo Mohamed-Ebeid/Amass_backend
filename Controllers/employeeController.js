@@ -13,6 +13,7 @@ export const addEmp = async (req, res) => {
 			contact_address: req.body.contact_address,
 			emp_email: req.body.emp_email,
 			emp_pass : bcrypt.hashSync(req.body.emp_pass),
+			dep_id: req.body.dep_id,
 			isAdmin: req.body.isAdmin,
 
 		}).save();
@@ -65,10 +66,20 @@ export const allEmp = async (req, res) => {
 			return res.status(404).send("No employee were found!");
 		} else {
 			 res.send(emp);
-			 console.log(req.emp)
 			 return;
 		}
 	} catch (e) {
-		return res.status(400).send(e.message);
+		return res.status(400).send("Error =>" + e.message);
 	}
 };
+
+//Getting all employees depends on the department
+export const depEmp = async (req,res)=>{
+	
+	try{
+		const emp = await Employee.find({dep_id: req.body.dep_id});
+		res.send(emp);
+	}catch(e){
+		return res.status(400).send("Error =>" + e.message);
+	}
+}
