@@ -5,14 +5,16 @@ mongoose.Promise = global.Promise;
 
 var reportSchema = new Schema(
   {
-    //creating collections
     emp_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Employee' },
-    duty_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Duty' },
-    job_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Duty'},
+    duty: [{
+      duty_id:{type: mongoose.Schema.Types.ObjectId, ref: 'Duty'},
+      total_laber:{type:String},
+      date: {type:Date},
+      }],
+    job_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Job_Title'},
     leave_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Leave'},
-    total_laber:{type:String, required: true},
-    salary : {type: String, required: true},
-    date: {type:Date, required:true},
+    salary : {type: String},
+    
    
   },
   {
