@@ -10,7 +10,7 @@ var reportSchema = new Schema(
     duty_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Duty' },
     job_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Duty'},
     leave_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Leave'},
-    total_laber:{type:String, required true},
+    total_laber:{type:String, required: true},
     salary : {type: String, required: true},
     date: {type:Date, required:true},
    

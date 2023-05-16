@@ -7,6 +7,7 @@ import departmentRoutes from "./Routes/departmentRoutes.js";
 import jobRoutes from "./Routes/jobRoutes.js";
 import dutyRoutes from "./Routes/dutyRoutes.js";
 import leaveRoutes from "./Routes/leaveRoutes.js";
+import reportRoutes from "./Routes/reportRoutes.js";
 
 
 
@@ -37,6 +38,7 @@ app.get("/api", function (req, res) {
  app.use("/api/job", jobRoutes);
  app.use("/api/duty", dutyRoutes);
  app.use("/api/leave", leaveRoutes);
+ app.use("/api/report", reportRoutes);
 
 app.listen(process.env.PORT || 5000, () =>
   console.log("Server running on port 5000")
