@@ -1,19 +1,18 @@
 import Job_Title from "../Models/job.js";
 
 //Add a job title
-export const addJob = async(req, res)=>{
-	try{
+export const addJob = async (req, res) => {
+	try {
 		const job = await new Job_Title({
 			title: req.body.title,
-			department : req.body.department,
+			department: req.body.department,
 			emp_id: req.body.emp_id,
 		}).save();
 		res.send(job);
-	}
-	catch(e){
+	} catch (e) {
 		return res.status(400).send("Error => " + e.message);
 	}
-}
+};
 
 //Updating a job title
 export const updateJob = async (req, res) => {
@@ -23,7 +22,7 @@ export const updateJob = async (req, res) => {
 			job.title = req.body.title;
 			job.department = req.body.department;
 			job.emp_id = req.body.emp_id;
-			
+
 			await job.save();
 			res.json("Done");
 		} else {

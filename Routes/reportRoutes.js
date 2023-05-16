@@ -1,7 +1,7 @@
-import express from 'express';
+import express from "express";
 
-import {make} from '../Controllers/reportController.js';
-import {isAuth, isAdmin} from '../utils.js';
+import { make } from "../Controllers/reportController.js";
+import { isAuth, isAdmin } from "../utils.js";
 
 const reportRouter = express.Router();
 

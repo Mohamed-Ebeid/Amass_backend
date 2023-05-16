@@ -1,19 +1,18 @@
 import Department from "../Models/department.js";
 
 //add a department
-export const addDep = async(req, res)=>{
-	try{
+export const addDep = async (req, res) => {
+	try {
 		const dep = await new Department({
-			name: req.body.name
+			name: req.body.name,
 		}).save();
 		res.send({
-			name: dep.name
+			name: dep.name,
 		});
-	}
-	catch(e){
+	} catch (e) {
 		return res.status(400).send("Error => " + e.message);
 	}
-}
+};
 
 //Deleting a Department
 export const deleteDep = async (req, res) => {
@@ -41,14 +40,13 @@ export const allDep = async (req, res) => {
 		if (dep.length === 0) {
 			return res.status(404).send("No employee were found!");
 		} else {
-			 res.send(dep);
-			 return;
+			res.send(dep);
+			return;
 		}
 	} catch (e) {
 		return res.status(400).send(e.message);
 	}
 };
-
 
 //Updating a department
 export const updateDep = async (req, res) => {

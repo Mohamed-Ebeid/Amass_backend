@@ -9,8 +9,6 @@ import dutyRoutes from "./Routes/dutyRoutes.js";
 import leaveRoutes from "./Routes/leaveRoutes.js";
 import reportRoutes from "./Routes/reportRoutes.js";
 
-
-
 const app = express();
 dotenv.config();
 
@@ -29,16 +27,16 @@ app.use(cors());
 app.get("/api", function (req, res) {
   // const date = new Date();
   // res.send(console.log(date));
-  res.json("Hello from the backend")
+  res.json("Hello from the backend");
   //console.log(req)
 });
 
- app.use("/api/employee", employeeRoutes);
- app.use("/api/department", departmentRoutes);
- app.use("/api/job", jobRoutes);
- app.use("/api/duty", dutyRoutes);
- app.use("/api/leave", leaveRoutes);
- app.use("/api/report", reportRoutes);
+app.use("/api/employee", employeeRoutes);
+app.use("/api/department", departmentRoutes);
+app.use("/api/job", jobRoutes);
+app.use("/api/duty", dutyRoutes);
+app.use("/api/leave", leaveRoutes);
+app.use("/api/report", reportRoutes);
 
 app.listen(process.env.PORT || 5000, () =>
   console.log("Server running on port 5000")
