@@ -9,6 +9,7 @@ var dutySchema = new Schema(
     emp_id: { type: mongoose.Schema.Types.ObjectId, ref: "Employee" },
     job_id: { type: mongoose.Schema.Types.ObjectId, ref: "Job_Title" },
     started: { type: Date },
+    status: { type: String, default: "on Clock" },
     ended: { type: Date },
     duration: { type: String },
     date: { type: Date, required: true },

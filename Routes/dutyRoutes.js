@@ -1,6 +1,6 @@
 import express from "express";
 import { startDuty, endDuty } from "../Controllers/dutyController.js";
-import { isAuth, isAdmin } from "../utils.js";
+import { isAuth } from "../utils.js";
 
 const dutyRouter = express.Router();
 

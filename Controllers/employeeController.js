@@ -69,7 +69,15 @@ export const allEmp = async (req, res) => {
 		return res.status(400).send("Error =>" + e.message);
 	}
 };
-
+//Getting a single employee
+export const singleEmp = async (req, res) => {
+	try {
+		const emp = await Employee.findById(req.emp._id).select("-emp_pass");
+		res.send(emp);
+	} catch (e) {
+		res.status(400).send("Error => " + e.message);
+	}
+};
 //Getting all employees depends on the department
 export const depEmp = async (req, res) => {
 	try {
