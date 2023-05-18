@@ -2,7 +2,7 @@ import Duty from "../Models/duty.js";
 
 export const startDuty = async (req, res) => {
 	try {
-		console.log(req.emp);
+		//console.log(req.emp);
 		const oldDuty = await Duty.find({
 			emp_id: req.emp._id,
 			status: "on Clock",
@@ -43,7 +43,7 @@ export const endDuty = async (req, res) => {
 			await duty.save();
 			res.json(duty);
 		} else {
-			console.log(req.body);
+			//console.log(req.body);
 			res.json({ message: "Something went wrong!" });
 		}
 	} catch (e) {

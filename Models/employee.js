@@ -11,9 +11,9 @@ var employeeSchema = new Schema(
     gender: { type: String, required: true },
     age: { type: Number, required: true },
     contact_address: { type: String, required: true },
-    emp_email: { type: String, required: true },
+    emp_email: { type: String, required: true, unique: true },
     emp_pass: { type: String, required: true },
-    isAdmin: { type: Boolean, default: false, required: true },
+    isAdmin: { type: Boolean, default: false },
     dep_id: { type: mongoose.Schema.Types.ObjectId, ref: "Department" },
   },
   {
