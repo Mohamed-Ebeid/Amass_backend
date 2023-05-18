@@ -12,7 +12,7 @@ var leaveSchema = new Schema(
       required: true,
     },
     job_id: { type: mongoose.Schema.Types.ObjectId, ref: "Job_Title" },
-    date: { type: Date, required: true },
+    date: { type: String, required: true },
     status: { type: String, default: "pending..." },
   },
   {

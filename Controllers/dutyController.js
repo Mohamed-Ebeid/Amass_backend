@@ -2,7 +2,11 @@ import Duty from "../Models/duty.js";
 
 export const startDuty = async (req, res) => {
 	try {
-		const oldDuty = await Duty.find({ emp_id: req.emp, status: "on Clock" });
+		console.log(req.emp);
+		const oldDuty = await Duty.find({
+			emp_id: req.emp._id,
+			status: "on Clock",
+		});
 		if (oldDuty.length == 1) {
 			//console.log(oldDuty);
 			res.send({
