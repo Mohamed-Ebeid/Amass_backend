@@ -1,4 +1,17 @@
 import Department from "../Models/department.js";
+//Get a single dep
+export const getDep = async (req, res) => {
+	try {
+		const dep = await Department.findById(req.params.id);
+		if (dep) {
+			res.json(dep);
+		} else {
+			res.json("Does not exists! ");
+		}
+	} catch (e) {
+		return res.status(400).send("Error => " + e.message);
+	}
+};
 
 //add a department
 export const addDep = async (req, res) => {
@@ -6,9 +19,7 @@ export const addDep = async (req, res) => {
 		const dep = await new Department({
 			name: req.body.name,
 		}).save();
-		res.send({
-			name: dep.name,
-		});
+		res.json("Added successfully! ");
 	} catch (e) {
 		return res.status(400).send("Error => " + e.message);
 	}
@@ -16,13 +27,10 @@ export const addDep = async (req, res) => {
 
 //Deleting a Department
 export const deleteDep = async (req, res) => {
-	if (req.headers && req.headers.auth !== "admin") {
-		return res.status(401).send("Unauthorized access!");
-	}
 	try {
-		const dep = await Department.findById(req.params.departmentId);
-		if (course) {
-			await Department.findByIdAndRemove(req.params.courseId);
+		const dep = await Department.findById(req.params.id);
+		if (dep) {
+			await Department.findByIdAndRemove(req.params.id);
 			res.json("Deleted successfully! ");
 		} else {
 			res.json("Does not exists! ");
