@@ -75,7 +75,7 @@ export const signIn = async (req, res) => {
 //Getting all the Employee
 export const allEmp = async (req, res) => {
 	try {
-		const emp = await Employee.find().select("fname lname");
+		const emp = await Employee.find().select("fname lname age gender");
 
 		if (emp.length === 0) {
 			return res.status(404).send("No employee were found!");
